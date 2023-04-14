@@ -6,44 +6,30 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
       <link rel="stylesheet" href="/css/bootstrap.css" />
+      <link rel="stylesheet" href="/css/index.css" />
       <script src="/js/bootstrap.bundle.min.js"></script>
+      <script src="/js/index.js"></script>
       <title>save</title>
       <style>
          body {
-            background-image: url(../images/카카오프렌즈_라이언.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            background-color: #0a174e;
          }
-         html {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
-         }
-         #container1 {
-            text-align: center;
-            color: black;
-            margin: 50px;
-         }
-         button {
-            background-color: #04aa6d;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
+         h2,
+         label,
+         legend,
+         .form-check {
+            color: #f5d042;
          }
       </style>
    </head>
    <body>
+      <!--  회원가입 컨테이너 -->
       <div id="container1"><h2>회원가입</h2></div>
       <div id="container2">
          <form>
+            <!-- 유저네임 -->
             <div class="row mb-3">
-               <label for="memberUserName" class="col-sm-2 col-form-label">UserName</label>
+               <label for="member-username" class="col-sm-2 col-form-label">UserName</label>
                <div class="col-sm-10">
                   <input
                      type="text"
@@ -54,11 +40,11 @@
                      placeholder="5~10글자 영문소문자 필수 , 숫자필수 , 특수문자는 -_만 가능(특수문자는 필수아님)"
                   />
                </div>
-               <h4 id="member-username-bottom"></h4>
+               <h5 id="member-username-bottom"></h5>
             </div>
-
+            <!-- 패스워드 -->
             <div class="row mb-3">
-               <label for="memberPassword" class="col-sm-2 col-form-label">Password</label>
+               <label for="member-password" class="col-sm-2 col-form-label">Password</label>
                <div class="col-sm-10">
                   <input
                      type="text"
@@ -69,11 +55,11 @@
                      placeholder="6~18글자 영문대/소문자 필수 , 숫자필수 , 특수문자는 -_만 가능(특수문자는 필수아님)"
                   />
                </div>
-               <h4 id="member-password-bottom"></h4>
+               <h5 id="member-password-bottom"></h5>
             </div>
-
+            <!-- 패스워드 체크 -->
             <div class="row mb-3">
-               <label for="memberPassword" class="col-sm-2 col-form-label">PasswordCheck</label>
+               <label for="member-password-check" class="col-sm-2 col-form-label">PasswordCheck</label>
                <div class="col-sm-10">
                   <input
                      type="text"
@@ -84,11 +70,11 @@
                      placeholder="비밀번호와 일치해야 합니다"
                   />
                </div>
-               <h4 id="member-password-check-bottom"></h4>
+               <h5 id="member-password-check-bottom"></h5>
             </div>
-
+            <!-- 이름 -->
             <div class="row mb-3">
-               <label for="memberPassword" class="col-sm-2 col-form-label">Name</label>
+               <label for="member-name" class="col-sm-2 col-form-label">Name</label>
                <div class="col-sm-10">
                   <input
                      type="text"
@@ -99,11 +85,11 @@
                      placeholder="필수입력"
                   />
                </div>
-               <h4 id="member-name-bottom"></h4>
+               <h5 id="member-name-bottom"></h5>
             </div>
-
+            <!-- 통신사 -->
             <div class="row mb-3">
-               <label for="memberPassword" class="col-sm-2 col-form-label">통신사</label>
+               <label for="member-MVNO" class="col-sm-2 col-form-label">통신사</label>
                <div class="col-sm-10">
                   <select name="member-MVNO" id="member-MVNO">
                      <option value="">MVNO</option>
@@ -113,9 +99,9 @@
                   </select>
                </div>
             </div>
-
+            <!-- 전화번호 -->
             <div class="row mb-3">
-               <label for="memberPassword" class="col-sm-2 col-form-label">Mobile</label>
+               <label for="member-mobile" class="col-sm-2 col-form-label">Mobile</label>
                <div class="col-sm-10">
                   <input
                      type="text"
@@ -126,12 +112,13 @@
                      placeholder="xxx-xxxx-xxxx 입력"
                   />
                </div>
-               <h4 id="member-mobile-bottom"></h4>
+               <h5 id="member-mobile-bottom"></h5>
             </div>
          </form>
+         <!-- 이메일 -->
          <form class="row sm-2">
             <div class="col-2">
-               <label for="memberEmail" class="col-sm-2 col-form-label">Email</label>
+               <label for="member-value" class="col-sm-2 col-form-label">Email</label>
             </div>
             <div class="col">
                <div class="row">
@@ -155,25 +142,26 @@
                </div>
             </div>
          </form>
+         <!-- 성별 -->
          <form>
             <fieldset class="row mb-3 mt-3">
                <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
                <div class="col-sm-10">
                   <div class="form-check">
                      남
-                     <input class="form-check-input" type="radio" name="memberGender" id="male" value="남" checked />
-                     <label class="form-check-label" for="male"> </label>
+                     <label class="form-check-input1" for="male"> </label>
+                     <input class="form-check-input1" type="radio" name="memberGender" id="male" value="남" checked />
                   </div>
                   <div class="form-check">
                      여
-                     <input class="form-check-input" type="radio" name="memberGender" id="female" value="여" />
-                     <label class="form-check-label" for="female"> </label>
+                     <label class="form-check-input2" for="female"> </label>
+                     <input class="form-check-input2" type="radio" name="memberGender" id="female" value="여" />
                   </div>
                </div>
             </fieldset>
-
+            <!-- 주소 -->
             <div class="row mb-3">
-               <label for="memberHome" class="col-sm-2 col-form-label">주소</label>
+               <label for="sample6_postcode" class="col-sm-2 col-form-label">주소</label>
                <div class="col-sm-10">
                   <input type="text" id="sample6_postcode" class="form-control" placeholder="우편번호" />
                   <input
@@ -189,15 +177,16 @@
             </div>
          </form>
       </div>
-      <div id="container3">
-         <button type="submit">Sign up</button>
+      <div id="container3" class="row">
+         <div class="col">
+            <button type="submit" id="submit-id1" onclick="signup()">Sign up</button>
+         </div>
+         <div class="col">
+            <button type="submit" id="submit-id2" onclick="fun1()">Cancel</button>
+         </div>
       </div>
    </body>
    <script>
-      // 도메인 선택
-      const domain_select = () => {
-         document.getElementById('email-domain').value = document.getElementById('email-domain-select').value;
-      };
       // 멤버이름 이벤트 부여
       document.getElementById('member-username').addEventListener('blur', function () {
          const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d-_]{5,10}$/;
@@ -268,43 +257,19 @@
          if (document.getElementById('member-mobile').value.match(exp)) {
             change.style.color = 'green';
             change.innerText = '멋진 전화번호네요!';
+            if (
+               document.getElementById('member-mobile').value.length != 0 &&
+               document.getElementById('member-username').value.length != 0 &&
+               document.getElementById('member-password').value.length != 0 &&
+               document.getElementById('member-password-check').value.length != 0
+            ) {
+               document.getElementById('submit-id1').disabled = false;
+            }
          } else {
             change.style.color = 'red';
             change.innerText = '전화번호 양식(xxx-xxxx-xxxx)을 지켜주세요';
             document.getElementById('member-mobile').focus();
          }
       });
-
-      function sample6_execDaumPostcode() {
-         new daum.Postcode({
-            oncomplete: function (data) {
-               var addr = '';
-               var extraAddr = '';
-               if (data.userSelectedType === 'R') {
-                  addr = data.roadAddress;
-               } else {
-                  addr = data.jibunAddress;
-               }
-               if (data.userSelectedType === 'R') {
-                  if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
-                     extraAddr += data.bname;
-                  }
-                  if (data.buildingName !== '' && data.apartment === 'Y') {
-                     extraAddr += extraAddr !== '' ? ', ' + data.buildingName : data.buildingName;
-                  }
-                  if (extraAddr !== '') {
-                     extraAddr = ' (' + extraAddr + ')';
-                  }
-                  document.getElementById('sample6_extraAddress').value = extraAddr;
-               } else {
-                  document.getElementById('sample6_extraAddress').value = '';
-               }
-
-               document.getElementById('sample6_postcode').value = data.zonecode;
-               document.getElementById('sample6_address').value = addr;
-               document.getElementById('sample6_detailAddress').focus();
-            },
-         }).open();
-      }
    </script>
 </html>
