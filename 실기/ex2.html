@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/실기/ex.css" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div class="container">
+         <form action="sign">
+            <!-- 아이디 -->
+            <label for="member-id">id</label>
+            <input type="text" id="member-email" name="member_email" placeholder="email" onblur="fun1()" /><br />
+            <h4 id="member-id-bottom"></h4>
+
+            <!-- 비밀번호 -->
+            <label for="member-password">password</label>
+            <input
+               type="text"
+               id="member-password"
+               name="member_password"
+               placeholder="password"
+               onblur="fun2()"
+            /><br />
+            <h4 id="member-password-bottom"></h4>
+
+            <!-- 비밀번호 확인-->
+            <label for="member-password-check">password check</label>
+            <input
+               type="text"
+               id="member-password-check"
+               name="member_password-check"
+               placeholder="password-check"
+               onblur="fun3()"
+            /><br />
+            <h4 id="member-password-check-bottom"></h4>
+         </form>
+      </div>
+   </body>
+   <script>
+      const fun1 = () => {
+         const ele = document.getElementById('member-email').value;
+         const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{6,10}$/;
+         const h = document.getElementById('member-id-bottom');
+         if (ele.match(exp)) {
+            h.style.color = 'green';
+            h.innerText = '아이디 정규식 확인';
+         } else {
+            h.style.color = 'red';
+            h.innerText = '올바른 형식이 아닙니다';
+         }
+      };
+
+      const fun2 = () => {
+         const ele = document.getElementById('member-password').value;
+         const exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!#$])[A-Za-z\d!#$]{8,16}$/;
+         const h = document.getElementById('member-password-bottom');
+         if (ele.match(exp)) {
+            h.style.color = 'green';
+            h.innerText = '비밀번호 정규식 확인';
+         } else {
+            h.style.color = 'red';
+            h.innerText = '올바른 형식이 아닙니다';
+         }
+      };
+
+      const fun3 = () => {
+         const ele1 = document.getElementById('member-password').value;
+         const ele2 = document.getElementById('member-password-check').value;
+         const h = document.getElementById('member-password-check-bottom');
+         if (ele2.length == 0) {
+            h.style.color = 'red';
+            h.innerText = '필수입력입니다';
+         } else if (ele1 == ele2) {
+            h.style.color = 'green';
+            h.innerText = '일치합니다';
+         } else {
+            h.style.color = 'red';
+            h.innerText = '일치하지 않습니다';
+         }
+      };
+   </script>
+</html>

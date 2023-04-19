@@ -1,0 +1,57 @@
+ul {
+   list-style-type: none;
+   overflow: hidden;
+}
+
+li {
+   float: left;
+}
+
+li a {
+   display: inline-block;
+   padding: 15px 15px;
+   text-align: center;
+   text-decoration: none;
+   color: black;
+}
+
+li a:hover {
+   background-color: red;
+}
+
+.sign {
+   background-color: dodgerblue;
+   color: white;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+.nav {
+   border: 3px solid black;
+   float: left;
+   width: 30%;
+   height: 400px;
+}
+
+.section {
+   border: 3px solid black;
+   float: left;
+   width: 70%;
+   height: 400px;
+   text-align: center;
+}
+
+.container::after {
+   content: '';
+   clear: both;
+   display: table;
+}
+footer {
+   background-color: yellow;
+   height: 200px;
+}
+input {
+   margin: 20px;
+}
